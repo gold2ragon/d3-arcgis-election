@@ -1,0 +1,611 @@
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+#MapDiv {
+    position: absolute;
+    width: 80%;
+}
+
+#sceneDiv {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    top: 0px;
+    left: 0px;
+}
+
+.panel-container {
+    position: relative;
+    width: 100%;
+    height: 95%;
+    top: 67px;
+    left: 0%;
+    z-index: 80;
+}
+
+#PanelRaceList {
+    width: 320px;
+    top: 494px;
+    left: 40px;
+    position: absolute;
+}
+
+#MobilePanelRaceList {
+    width: 280px;
+    height: 175px;
+}
+
+.panel-side {
+    padding: 2px;
+    box-sizing: border-box;
+    color: black;
+    background-color: rgba(200, 200, 200, 1);
+    overflow: auto;
+    box-shadow: 2px 2px 10px rgba(200, 200, 200, 1);
+}
+
+    .panel-side h2 {
+        padding: 0 20px;
+        margin: 20px 0;
+    }
+
+    .panel-side ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .panel-side li {
+        list-style: none;
+        padding: 10px 20px;
+    }
+
+.panel-result {
+    cursor: pointer;
+    margin: 2px 0;
+    background-color: rgba(245, 245, 245, 1);
+}
+
+    .panel-result:hover,
+    .panel-result:focus {
+        color: white;
+        background-color: rgba(0, 0, 80, 0.5);
+    }
+
+.selected {
+    color: white;
+    background-color: rgba(0, 0, 80, 0.5);
+}
+
+.FilteredRaces {
+    background-color: rgba(224, 255, 255, 0.4);
+}
+
+#paneDiv {
+    padding: 12px;
+    background-color: rgba(255, 255, 255, 1);
+    color: black;
+}
+
+#MapOptionDiv {
+    padding: 12px;
+    background-color: rgba(255, 255, 255, 1);
+    color: black;
+}
+
+#RadioDiv {
+    padding: 12px;
+    background-color: rgba(255, 255, 255, 1);
+    color: black;
+}
+
+
+#HeaderDiv {
+    height: 66px;
+    width: 100%;
+    background-image: linear-gradient(0deg, rgba(0, 0, 80, 0.7), rgba(0, 0, 80, 1));
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    z-index: 100;
+    box-shadow: inset 0px 0px 0px 1px white, inset 0px 0px 10px white;
+    display: table;
+}
+
+#SideDiv {
+    height: 100%;
+    width: 401px;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    background-color: rgba(255, 255, 255, 1);
+    box-shadow: 2px 0px 10px 0px black;
+    z-index: 50;
+    visibility: hidden;
+}
+
+#MainDiv {
+    background-color: rgba(255, 255, 255, 1);
+    height: 470px;
+    width: 320px;
+    overflow: auto;
+}
+
+.DivBox {
+    width: 100%;
+    margin: 0px;
+    left: 40px;
+    position: absolute;
+}
+
+#RaceDiv {
+    top: 400px;
+    height: 63px;
+}
+
+.DivTitle {
+    margin: 0px;
+    padding: 30px 0px 5px 0px;
+    font-weight: bold;
+    font-size: 1.5em;
+    color: black;
+    text-shadow: 1px 1px 2px white;
+}
+
+.DivSubTitle {
+    margin: 0px;
+    font-weight: bold;
+    font-size: 1em;
+    color: black;
+    text-shadow: 1px 1px 2px white;
+}
+
+#CheckTextDiv {
+    height: 63px;
+    width: 100%;
+    margin: 0px;
+}
+
+#CheckTextTitle {
+    margin: 0px;
+    padding: 30px 0px 10px 0px;
+    padding-left: 40px;
+    font-weight: bold;
+    font-size: 1.5em;
+    color: black;
+    text-shadow: 1px 1px 2px white;
+}
+
+#CheckBoxDiv {
+    height: 126;
+    width: 300px;
+    margin: 0px;
+    top: 80px;
+    left: 40px;
+    padding-left: 3%;
+    position: absolute;
+}
+
+#FilterDiv {
+    height: 200px;
+    top: 200px;
+}
+
+#FilterText {
+    padding: 20px 0px 5px;
+}
+
+#FilterBox {
+    width: 225px;
+    height: 25px;
+    background-color: white;
+    border: 2px solid black;
+    box-shadow: 2px 2px 5px black;
+}
+
+#FilterPrecinct {
+    padding: 5px;
+}
+
+#FilterButton {
+    width: 125px;
+    height: 25px;
+    background-color: grey;
+    border: 2px solid black;
+    box-shadow: 2px 2px 5px black;
+    border-radius: 5px;
+}
+
+#FilterButtonText {
+    padding: 3px 15px;
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.LineDiv {
+    height: 2px;
+    width: 80%;
+    left: 40px;
+    background-color: black;
+    position: absolute;
+}
+
+#Line1 {
+    top: 200px;
+}
+
+#Line2 {
+    top: 400px;
+}
+
+.Container {
+    height: 85%;
+    width: 100%;
+}
+
+.header {
+    width: 100%;
+    height: 15%;
+}
+
+.btns {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    overflow: auto;
+}
+
+.btn-switch {
+    flex-grow: 4;
+    background-color: rgba(34, 111, 14, 0.5);
+    color: #FFF;
+    margin: 1px;
+    width: 50%;
+    padding: 20px;
+    overflow: auto;
+    text-align: center;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+.active-map {
+    color: #fff;
+    background-color: rgba(34, 111, 14, 1);
+}
+
+.TableDisplay {
+    table-layout: fixed;
+    display: block;
+    width: 300px;
+    margin: 0 auto;
+    overflow: auto;
+    font-family: Calibri;
+    padding: 0px 20px 20px;
+}
+
+.Party {
+    width: 30px !important;
+}
+
+.Candidate {
+    width: 100px !important;
+}
+
+.Votes {
+    width: 50px !important;
+}
+
+.Percent {
+    width: 50px !important;
+}
+
+.PartyColor {
+    width: 1em;
+    height: 1em;
+}
+
+h4 {
+    display: block;
+    font-weight: bold;
+}
+
+table {
+    table-layout: fixed;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+tbody td {
+    padding: 10px;
+}
+
+tbody tr:nth-child(odd) {
+    background-color: #fafafa;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #efefef;
+}
+
+.Results {
+    margin: 20px 0px 0px 0px;
+}
+
+.Bar {
+    width: 55px !important;
+}
+
+.Turnout {
+    width: 75px !important;
+}
+
+.TurnoutVotes {
+    width: 50px !important;
+}
+
+.TurnoutPercent {
+    width: 40px !important;
+}
+
+.TurnoutColor {
+    height: 1em;
+    margin: 3px 0px 0px 0px;
+}
+
+.HeaderTextMap {
+    font-size: 27px;
+    color: white;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px black;
+    position: absolute;
+}
+
+#TitleText {
+    right: 0%;
+    display: table-cell;
+    padding: 17px;
+}
+
+#ImageText {
+    left: 0%;
+    display: table;
+    padding: 12px;
+}
+
+#Image {
+    display: table-cell;
+    height: 40px;
+    width: 50px;
+}
+
+#ImageName {
+    display: table-cell;
+    padding: 0px 20px;
+    vertical-align: middle;
+}
+
+#MapOptionText {
+    cursor: pointer;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+#CloseDiv {
+    cursor: pointer;
+    color: blue;
+    text-decoration: underline;
+}
+
+#ClearButton {
+    text-decoration: underline;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* Customize the label (the container) */
+.container {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 17px;
+    color: black;
+    user-select: none;
+}
+
+    /* Hide the browser's default checkbox */
+    .container input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+    }
+
+/* Create a custom checkbox */
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 17px;
+    width: 17px;
+    background-color: rgba(240, 240, 240, 1);
+    border: 3px solid black;
+}
+
+    /* Create the checkmark/indicator (hidden when not checked) */
+    .checkmark:after {
+        content: "";
+        position: absolute;
+        display: none;
+    }
+
+/* Show the checkmark when checked */
+.container input:checked ~ .checkmark:after {
+    display: block;
+}
+
+/* Style the checkmark/indicator */
+.container .checkmark:after {
+    left: 5px;
+    top: 1px;
+    width: 5px;
+    height: 10px;
+    border: solid rgba(0, 0, 80, 0.75);
+    border-width: 0 3px 3px 0;
+    transform: rotate(45deg);
+}
+
+/* Tooltip container */
+.tooltip {
+    position: relative;
+}
+
+    /* Tooltip text */
+    .tooltip .tooltiptext {
+        visibility: hidden;
+        width: 200px;
+        background-color: black;
+        color: #fff;
+        text-align: center;
+        padding: 5px;
+        border-radius: 6px;
+        font-size: 0.75em;
+        z-index: 100;
+    }
+
+#RadioToolTipText {
+    top: -5px !important;
+    left: 105% !important;
+    position: absolute;
+}
+
+#ToolTipText {
+    top: -5px;
+    left: 105%;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+}
+
+#PrecinctName {
+    position: absolute;
+    bottom: 2%;
+    left: 50%;
+    z-index: 120;
+    padding: 0px 5px;
+    font-weight: bold;
+    text-shadow: 2px 2px white;
+    background-color: rgba(0,0,0,0.25);
+    visibility: hidden;
+    font-size: 2em;
+}
+
+#AdvancedInfo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 120;
+    width: 615px;
+    height: 565px;
+    box-shadow: 1px 1px 5px 0px black;
+    table-layout: fixed;
+    display: block;
+    visibility: hidden;
+    margin: -232px 0px 0px -307px;
+}
+
+.TableTitle {
+    font-weight: bold;
+    font-size: 1.25em;
+    margin-left: 10px;
+}
+
+.TableText {
+    margin-left: 10px;
+}
+
+.OptionsImage {
+    width: 160px;
+    height: 140px;
+    box-shadow: 1px 1px 3px black;
+    margin: 10px;
+}
+
+.ImageCell {
+    width: 170px !important;
+}
+
+.DescriptionCell {
+    width: 350px !important;
+}
+
+#CloseButton {
+    color: blue;
+    margin: 0px;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+#InfoText {
+    color: blue;
+    margin: 0px;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+#RaceBoxDiv {
+    margin: 0px;
+    padding: 10px;
+    font-weight: bold;
+    background-color: rgba(255,255,255,1);
+    font-size: 1em;
+}
+
+#RaceBoxtext {
+    color: black;
+    margin: 0px;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+    #RaceBoxtext:hover {
+        color: blue;
+    }
+
+#HiddenRaceBox {
+    position: absolute;
+    top: 125px;
+    right: 15px;
+    z-index: 120;
+    margin: 0px;
+    padding: 10px;
+    font-weight: bold;
+    background-color: rgba(255,255,255,1);
+    width: 300px;
+    height: 230px;
+    visibility: hidden;
+    box-shadow: 1px 1px 3px 0px black;
+}
+.chart div {
+  font: 10px sans-serif;
+  background-color: steelblue;
+  text-align: right;
+  padding: 3px;
+  margin: 1px;
+  color: white;
+}

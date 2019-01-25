@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+    <title>2018 General Election</title>
+
+    <link rel="stylesheet" href="https://js.arcgis.com/4.6/esri/css/main.css">
+    <script src="http://d3js.org/d3.v3.min.js"></script> 
+    <script src="https://js.arcgis.com/4.6/"></script>
+    <!--<script type="text/javascript" src="Header.js"></script>-->
+    <script type="text/javascript" src="js/sample.js"></script>
+    <script src="js/main2.js"></script>
+    
+
+     <link rel="stylesheet" href="css/style.css">
+
+
+<script>
+
+</script>
+
+   
+    </head>
+    
+    <body>
+        <div id="HeaderDiv">
+            <div class="HeaderTextMap" id="TitleText" style="visibility:hidden">2018 General Election Results</div>
+            <div class="HeaderTextMap" id="ImageText" style="visibility:hidden">
+                <img id ="Image"src="images/logo.png">
+                <p id="ImageName">David West</p>
+            </div>
+        </div>
+        <div class="panel-container">
+            <div id="SideDiv">
+                <div id="CheckTextDiv">
+                    <p id="CheckTextTitle">Click to add to map:</p>
+                </div>
+                <div id="CheckBoxDiv">
+                    <label class="container tooltip">
+                        City
+                        <input type="checkbox" autocomplete="off">
+                        <span class="checkmark" value="CVT"></span>
+                    </label>
+                    <label class="container tooltip">
+                        Legend
+                        <input type="checkbox" autocomplete="off">
+                        <span class="checkmark" value="Legend"></span>
+                    </label>
+    
+                    <label class="container tooltip">
+                        Advanced Map Options
+                        <input type="checkbox" autocomplete="off">
+                        <span class="checkmark" value="Options"></span>
+                    </label>
+                </div>
+                <div id="Line1" class="LineDiv"></div>
+                <div id="FilterDiv" class="DivBox">
+                    <div class="DivTitle">Filter Races</div>
+                    <div class="DivSubTitle">See races for an individual precinct</div>
+                    <div id="FilterText">Click precinct on map to populate box below:</div>
+                    <div id="FilterBox">
+                        <div id="FilterPrecinct"></div>
+                    </div>
+                    <div id="FilterButton" value="Off">
+                        <div id="FilterButtonText">Filter Races</div>
+                    </div>
+                </div>
+                <div id="Line2" class="LineDiv"></div>
+                <div id="RaceDiv" class="DivBox">
+                    <p class="DivTitle" id="RaceTitle">All Races</p>
+                    <p class="DivSubTitle" id="RaceSubTitle"></p>
+                </div>
+                <div class="panel-side" id="PanelRaceList">
+                    <ul id="nyc_graphics">
+                        <li>Loading&hellip;</li>
+                    </ul>
+                </div>
+            </div>
+            <div id="sceneDiv"></div>
+        </div>
+        <div id="MainDiv" class="esri-widget">
+            <div id="ResultDiv" class="Results"></div>
+            <div id="TurnoutDiv" class="Results">
+                <div id="chart" class="chart TableDisplay">
+
+                   
+                </div>
+            </div>
+        </div>
+        <div id="RaceBoxDiv" class="esri-widget">
+            <p id="RaceBoxtext">Change Race</p>
+        </div>
+        <div id="HiddenRaceBox" class="esri-widget">
+            <div style="display: table;">
+                <p style="display: table-cell; padding-right: 235px;"></p>
+                <p id="RaceCloseButton" style="display: table-cell; color: blue; text-decoration: underline;">Close</p>
+            </div>
+            <div class="panel-side" id="MobilePanelRaceList">
+                <ul id="RaceList">
+                    <li>Loading&hellip;</li>
+                </ul>
+            </div>
+            
+        </div>
+        <div id="PrecinctName" class="esri-widget">
+            <p></p>
+        </div>
+        <div id="AdvancedInfo" class="esri-widget">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class="DescriptionCell">
+                            <p class="TableTitle">Highest Percent</p>
+                            <p class="TableText">This option shows the percent of the candidate who recieved the most votes in the precinct. Darker precincts correspond to a candidate who won the precinct with a larger percent of the vote, and lighter precincts correspond to a candidate who won the precinct with a lower percent of the vote.</p>
+                        </td>
+                        <td class="ImageCell">
+                            <img class="OptionsImage" src="http://www.starkcountyohio.gov/StarkCounty/media/Auditor/GIS/Winner-Percent.png">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="DescriptionCell">
+                            <p class="TableTitle">Margin of Victory</p>
+                            <p class="TableText">This option shows the number of votes the candidate with the most votes won the district by. Darker precincts correspond to a candidate who won the precinct by a larger number of votes, and lighter precincts correspond to a candidate who won the precinct by a smaller number of votes.</p>
+                        </td>
+                        <td class="ImageCell">
+                            <img class="OptionsImage" src="http://www.starkcountyohio.gov/StarkCounty/media/Auditor/GIS/Margin-of-Victory.png">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="DescriptionCell">
+                            <p class="TableTitle">Voter Turnout</p>
+                            <p class="TableText">This option shows the voter turnout for race displayed on the map. Darker precincts correspond to a higher percent of registered voters voting in the race, and lighter precincts correspond to a lower percent of registered voters voting in the race.</p>
+                        </td>
+                        <td class="ImageCell">
+                            <img class="OptionsImage" src="http://www.starkcountyohio.gov/StarkCounty/media/Auditor/GIS/Voter-Turnout.png">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="DescriptionCell">
+                            <p id="CloseButton">Close</p>
+                        </td>
+                        <td class="ImageCell"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </body>
+    
+    </html>
+    
