@@ -75,8 +75,8 @@ require([
 	});
 
 	//Variable Section
-	// var listNode = document.getElementById('nyc_graphics');
-	// var MobileListNode = document.getElementById('RaceList');
+	var listNode = document.getElementById('nyc_graphics');
+	var MobileListNode = document.getElementById('RaceList');
 	var fragment = document.createDocumentFragment();
 	var CurrentRace;
 	var CurrentRaceName;
@@ -195,16 +195,16 @@ require([
 	// For Mobile Application
 	// var SideDiv = document.getElementById('SideDiv');
 	// var MainDiv = document.getElementById('MainDiv');
-	// var HeaderTextMap = document.getElementsByClassName('HeaderTextMap');
-	// var TitleText = document.getElementById('TitleText');
-	// var ImageText = document.getElementById('ImageText');
-	// var Image = document.getElementById('Image');
-	// var ImageName = document.getElementById('ImageName');
-	// var RaceBoxText = (document.getElementById('RaceBoxtext').onclick = onRaceButtonClick);
-	// var HiddenRaceBox = document.getElementById('HiddenRaceBox');
-	// var RaceCloseButton = (document.getElementById('RaceCloseButton').onclick = onRaceButtonCloseClick);
-	// var RaceBoxDiv = document.getElementById('RaceBoxDiv');
-	// var Mobile = 'False';
+	var HeaderTextMap = document.getElementsByClassName('HeaderTextMap');
+	var TitleText = document.getElementById('TitleText');
+	var ImageText = document.getElementById('ImageText');
+	var Image = document.getElementById('Image');
+	var ImageName = document.getElementById('ImageName');
+	var RaceBoxText = (document.getElementById('RaceBoxtext').onclick = onRaceButtonClick);
+	var HiddenRaceBox = document.getElementById('HiddenRaceBox');
+	var RaceCloseButton = (document.getElementById('RaceCloseButton').onclick = onRaceButtonCloseClick);
+	var RaceBoxDiv = document.getElementById('RaceBoxDiv');
+	var Mobile = 'False';
 
 	window.addEventListener('resize', onWindowResize);
 
@@ -228,34 +228,34 @@ require([
 	}
 
 	function setTitleMobile(isMobile) {
-		// if (isMobile) {
-		// 	SideDiv.setAttribute('style', 'visibility:hidden;');
-		// 	MainDiv.setAttribute('style', 'height:150px!important;');
-		// 	HeaderTextMap[1].setAttribute('style', 'visibility:visible;');
-		// 	view.padding.left = 0;
-		// 	view.ui.add([
-		// 		{
-		// 			component: 'RaceBoxDiv',
-		// 			position: 'top-left',
-		// 			index: 1,
-		// 		},
-		// 	]);
-		// 	RaceBoxDiv.setAttribute('style', 'visibility:visible;');
-		// 	Mobile = 'True';
-		// } else {
-			// SideDiv.setAttribute('style', 'visibility:visible;');
-			// MainDiv.setAttribute('style', 'height:470px!important;');
-			// HeaderTextMap[0].setAttribute('style', 'visibility:visible;');
-			// HeaderTextMap[1].setAttribute('style', 'visibility:visible;');
+		if (isMobile) {
+			SideDiv.setAttribute('style', 'visibility:hidden;');
+			MainDiv.setAttribute('style', 'height:150px!important;');
+			HeaderTextMap[1].setAttribute('style', 'visibility:visible;');
+			view.padding.left = 0;
+			view.ui.add([
+				{
+					component: 'RaceBoxDiv',
+					position: 'top-left',
+					index: 1,
+				},
+			]);
+			RaceBoxDiv.setAttribute('style', 'visibility:visible;');
+			Mobile = 'True';
+		} else {
+			SideDiv.setAttribute('style', 'visibility:visible;');
+			MainDiv.setAttribute('style', 'height:470px!important;');
+			HeaderTextMap[0].setAttribute('style', 'visibility:visible;');
+			HeaderTextMap[1].setAttribute('style', 'visibility:visible;');
 			view.padding.left = 0;
 			view.on('pointer-move', moveEventHandler);
 			view.on('pointer-down', moveEventHandler);
-			// if (Mobile == 'True') {
-			// 	RaceBoxDiv.setAttribute('style', 'visibility:hidden;');
-			// }
-			// HiddenRaceBox.setAttribute('style', 'visibility:hidden;');
-			// Mobile = 'False';
-		// }
+			if (Mobile == 'True') {
+				RaceBoxDiv.setAttribute('style', 'visibility:hidden;');
+			}
+			HiddenRaceBox.setAttribute('style', 'visibility:hidden;');
+			Mobile = 'False';
+		}
 	}
 
 	function onRaceButtonClick() {
@@ -284,11 +284,11 @@ require([
 		url: CVTMapLayer,
 	});
 
-	// var CloseButton = document.getElementById('CloseButton');
-	// var AdvancedInfo = document.getElementById('AdvancedInfo');
-	// CloseButton.addEventListener('click', function() {
-	// 	AdvancedInfo.setAttribute('style', 'visibility: hidden;');
-	// });
+	var CloseButton = document.getElementById('CloseButton');
+	var AdvancedInfo = document.getElementById('AdvancedInfo');
+	CloseButton.addEventListener('click', function() {
+		AdvancedInfo.setAttribute('style', 'visibility: hidden;');
+	});
 
 	function onCheckBoxClick(event) {
 		var Value = event.target.attributes.value.value;
@@ -330,10 +330,9 @@ require([
 	//Create Panel Result Div When Map Has Loaded
 	view.when(function() {
 		CurrentRace = ElectionRaceList[0].Fieldname;
-		// CreateRaceList('Load');
+		CreateRaceList('Load');
 		var Layer = webmap.layers.items[0];
-        console.log(Layer.parsedUrl.path);
-        LayerTitle = Layer.title;
+		LayerTitle = Layer.title;
 		ElectionResultsLayerURL = Layer.parsedUrl.path;
 
 		OnLayer = webmap.layers.items[0];
@@ -1068,15 +1067,12 @@ require([
 		// Search for graphics at the clicked location
 		view.hitTest(screenPoint).then(function(response) {
 			if (response.results.length == 1 && ClickPrecinctID != '') {
-                ClearRace();
-            }
-            console.log(response.results[0].graphic.layer.parsedUrl.path, ElectionResultsLayerURL)
+				ClearRace();
+			}
 			if (response.results[0].graphic.layer.parsedUrl.path == ElectionResultsLayerURL) {
 				ClickGraphic = response.results[0].graphic;
 				ClickGeometry = ClickGraphic.geometry;
-                var Attributes = ClickGraphic.attributes;
-                
-                console.log('Attributes', Attributes);
+				var Attributes = ClickGraphic.attributes;
 
 				NewClickGraphic = new Graphic({
 					geometry: ClickGeometry,
@@ -1096,14 +1092,13 @@ require([
 				ClickPrecinctID = NewClickGraphic;
 
 				if (Attributes.PRECINCT != CurrentClickPrecinctID) {
-                    console.log('clicked 5');
-					// PrecinctClickCheckFilterButton('Map');
+					PrecinctClickCheckFilterButton('Map');
 					CurrentClickPrecinctName = FixPrecinctName(Attributes);
 
-					// var FilterButtonValue = document.getElementById('FilterButton').attributes.value.nodeValue;
+					var FilterButtonValue = document.getElementById('FilterButton').attributes.value.nodeValue;
 
 					var FilterPrecinct = document.getElementById('FilterPrecinct');
-					FilterPrecinct.value = CurrentClickPrecinctName;
+					FilterPrecinct.textContent = CurrentClickPrecinctName;
 
 					CurrentClickPrecinctID = Attributes.PRECINCT;
 					GetPrecinctAttributes(Attributes);
@@ -1160,9 +1155,9 @@ require([
 			FilterButton.attributes.value.nodeValue = 'Ready for Clear';
 			FilterButton.setAttribute('style', 'background-color: red;');
 			FilterButtonText.textContent = 'Clear Filter';
-			// while (listNode.firstChild) {
-			// 	listNode.removeChild(listNode.firstChild);
-			// }
+			while (listNode.firstChild) {
+				listNode.removeChild(listNode.firstChild);
+			}
 			CreateRaceList(CurrentClickPrecinctID);
 			FilterPrecinct.textContent = CurrentClickPrecinctName;
 		} else if (FilterButtonValue == 'Ready for Clear') {
@@ -1198,12 +1193,12 @@ require([
 	function CreateRaceList(Value) {
 		if (Value != 'Load') {
 			while (listNode.firstChild) {
-				// listNode.removeChild(listNode.firstChild);
+				listNode.removeChild(listNode.firstChild);
 			}
 		}
 
 		if (Value == 'Load' || Value == 'Remove') {
-			// listNode.innerHTML = '';
+			listNode.innerHTML = '';
 
 			for (step = 0; step < ElectionRaceList.length; step++) {
 				var Dictionary = ElectionRaceList[step];
@@ -1223,7 +1218,7 @@ require([
 					li.setAttribute('class', 'selected');
 					target = li;
 				}
-				// listNode.appendChild(li);
+				listNode.appendChild(li);
 
 				var NumRaces = document.getElementById('RaceSubTitle');
 				NumRaces.textContent = 'Number of Races: ' + String(ElectionRaceList.length);
@@ -1265,7 +1260,7 @@ require([
 							li.setAttribute('class', 'selected');
 							target = li;
 						}
-						// listNode.appendChild(li);
+						listNode.appendChild(li);
 					}
 				}
 			}
@@ -1273,7 +1268,7 @@ require([
 	}
 
 	function CreateMobileRaceList() {
-		// MobileListNode.innerHTML = '';
+		MobileListNode.innerHTML = '';
 		for (step = 0; step < ElectionRaceList.length; step++) {
 			var Dictionary = ElectionRaceList[step];
 			var Race = Dictionary.Fieldname;
@@ -1289,7 +1284,7 @@ require([
 				li.setAttribute('class', 'selected');
 				mobiletarget = li;
 			}
-			// MobileListNode.appendChild(li);
+			MobileListNode.appendChild(li);
 		}
 	}
 
@@ -1331,8 +1326,8 @@ require([
 	}
 
 	//Create Event Listener to Listen for Click
-	// listNode.addEventListener('click', onListClickHandler);
-	// MobileListNode.addEventListener('click', onMobileListClickHandler);
+	listNode.addEventListener('click', onListClickHandler);
+	MobileListNode.addEventListener('click', onMobileListClickHandler);
 
 	function onClickMapOptions(event) {
 		view.ui.remove('MapOptionDiv');
