@@ -1,0 +1,162 @@
+html, body {
+    height: 100%;
+}
+
+.black-border {
+    border-bottom: 1px solid black;
+    border-right: 1px solid black;
+}
+.black {
+    background: black;
+    color: white;
+}
+button, button:focus, button:hover, button:not(:hover) {
+    outline: none !important;
+    border: none;
+    background: transparent;
+}
+.card {
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+}
+.card-header {
+    padding: 0px !important;
+}
+.collapsing {
+    -webkit-transition: none;
+    transition: none;
+    display: none;
+}
+.btn-link, .btn-link:hover, .btn-link:active, .btn-link:not(:hover){
+    color: #555555;
+    text-decoration: none;
+    border-left: none;
+}
+.btn-outline-secondary:hover {
+    background-color: none;
+}
+.input-group-text {
+    border-color: #6c757d !important;
+    background: none;
+}
+
+.btn-toggle, .btn-close {
+    padding: 0px !important;
+}
+.highlight-boder {
+    border-left: 5px solid black;
+}
+.highlight {
+    background: #DDDDDD;
+}
+.btn-outline-secondary {
+    border: 1px solid #6c757d !important;
+}
+.total_votes {
+    color: blue;
+}
+.winner {
+    color: red;
+}
+
+
+.widget-open-symbol {
+    height: 4px;
+    width: 4px;
+    border-radius: 4px;
+    margin: auto;
+    color: #FFF;
+    background-color: #FFF;
+}
+.open_symbol {
+    width: fit-content;
+    position: absolute;
+    right: 0;
+}
+.tooltip {
+	background: #eee;
+	box-shadow: 0 0 5px #999999;
+	color: #333;
+	font-size: 12px;
+	left: 130px;
+	padding: 10px;
+	position: absolute;
+	text-align: center;
+	top: 95px;
+	width: 80px;
+	z-index: 10;
+	display: block;
+	opacity: 0;
+}
+@media (min-width: 768px) {
+    .my_row {
+        width: 100%;
+        display: flex;
+    }
+    .leftside {
+        width: 100%;
+    }
+    .rightside {
+        position: absolute;
+        right: 0;
+        width: 420px;
+        height: 49px;
+    }
+    .container-fluid {
+        padding: 0px;
+    }
+    .input-group {
+        width: 100%;
+    }
+    #sceneDiv {
+        position: relative;
+        height: 100%;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        font-family: sans-serif;
+        top: 0px;
+        left: 0px;
+    }
+    #election_accordion {
+        overflow-y: auto;
+        height: calc(100vh - 148px);
+        margin: 0 4px;
+        border: 1px solid rgba(0, 0, 0, 0.125);
+    }
+}
+@media (max-width: 767px) {
+    .my_row {
+        width: 100%;
+        display: block;
+        height: 43px;
+    }
+    .leftside, .rightside {
+        display: block;
+    }
+    .rightside {
+        display: block;
+    }
+    .container-fluid {
+        padding: 0px;
+    }
+    .input-group {
+        width: auto;
+    }
+    #sceneDiv {
+        position: relative;
+        height: 80vw;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        font-family: sans-serif;
+        top: 0px;
+        left: 0px;
+    }
+    #election_accordion {
+        overflow-y: auto;
+        height: calc(100vh - 80vw - 148px);
+        margin: 0 4px;
+        border: 1px solid rgba(0, 0, 0, 0.125);
+    }
+}

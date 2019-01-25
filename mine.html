@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<title>Document</title>
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" />
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" type="text/css" rel="stylesheet">
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    
+    <link rel="stylesheet" href="https://js.arcgis.com/4.6/esri/css/main.css">
+    <script src="http://d3js.org/d3.v3.min.js"></script> 
+    <script src="https://js.arcgis.com/4.6/"></script>
+    
+    <link rel="stylesheet" href="style.css" />
+    <script src="js/main3.js"></script> 
+	<script src="dic121.js"></script>
+
+</head>
+
+<body class="container-fluid">
+	<div class="my_row">
+		<div class="leftside black-border" style="padding: 8px; font-size: 20px;"><img src="logo.png" height="30px"> General Election Results</div>
+		<div class="rightside black">
+			<div class="open_symbol" data-toggle="collapse" data-target="#infodiv" aria-expanded="false" aria-controls="infodiv">
+				<img src="icon.png" height="25px" style="margin: 8px;">
+				<div class="widget-open-symbol"></div>
+			</div>
+		</div>
+	</div>
+	<div class="my_row panel-container" style="height: 100%;">
+		<div class="leftside" style="height: 100%;">
+			<div id="sceneDiv"></div>
+		</div>
+		<div id="infodiv" class="collapse show rightside">
+			<div class="my_row" style="border-bottom: 2px solid black; border-left: 1px solid black; background: white !important">
+                <div style="width: 100%;">
+                    <div class="pull-right">
+                        <span class="btn btn_toggle" data-toggle="collapse" data-target="#collapseDiv" aria-expanded="false" aria-controls="collapseDiv"><i
+                            class="fa fa-angle-double-up"></i></span>
+                        <span class="btn btn_close" data-toggle="collapse" data-target="#infodiv" aria-expanded="false" aria-controls="infodiv">&times;</span>
+                    </div>
+				</div>
+			</div>
+			<div class="collapse show" id="collapseDiv"  style="border-left: 1px solid black; background: white !important">
+				<div class="my_row">
+					<div class="input-group" style="margin: 10px;">
+						<div class="input-group-prepend">
+							<span class="input-group-text" id="basic-addon1"><i class="fa fa-caret-down"></i></span>
+						</div>
+						<input id="FilterPrecinct" class="form-control border-secondary py-2" type="search">
+						<div class="input-group-append">
+							<button class="btn btn-outline-secondary">
+								<i class="fa fa-search"></i>
+							</button>
+						</div>
+					</div>
+				</div>
+				<div class="accordion collapse show" id="election_accordion">
+				</div>
+				
+			</div>
+		</div>
+	</div>
+	<script src="script.js"></script>
+</body>
+
+</html>
