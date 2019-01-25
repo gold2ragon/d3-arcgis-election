@@ -182,7 +182,7 @@ require([
                         view.padding.left = 0;
                         view.ui.add([{
                             component: "RaceBoxDiv",
-                            position: "top-right",
+                            position: "top-left",
                             index: 1
                         }]);
                         RaceBoxDiv.setAttribute("style", "visibility:visible;");
@@ -192,7 +192,7 @@ require([
                         MainDiv.setAttribute("style", "height:470px!important;");
                         HeaderTextMap[0].setAttribute("style", "visibility:visible;");
                         HeaderTextMap[1].setAttribute("style", "visibility:visible;");
-                        view.padding.left = 401;
+                        view.padding.left = 0;
                         view.on("pointer-move", moveEventHandler);
                         view.on("pointer-down", moveEventHandler);
                         if (Mobile == "True") {
@@ -693,7 +693,7 @@ require([
                 view.when(function () {
                     view.popup.dockEnabled = true;
                     view.popup.dockOptions = {
-                        position: "bottom-right",
+                        position: "bottom-left",
                     };
 
                     var searchWidget = new Search({
@@ -714,10 +714,10 @@ require([
                     });
                     view.ui.add([{
                         component: searchWidget,
-                        position: "top-right",
+                        position: "top-left",
                         index: 0
                     }]);
-                    //view.ui.add(searchWidget, "top-right");
+                    //view.ui.add(searchWidget, "top-left");
 
 
                     var home = new Home({
@@ -728,7 +728,7 @@ require([
                     //Add Div Elements to View
                     view.ui.add([{
                         component: "MainDiv",
-                        position: "bottom-right",
+                        position: "bottom-left",
                         index: 0
                     }]);
                 });

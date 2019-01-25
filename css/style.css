@@ -35,9 +35,10 @@ body {
 
 #PanelRaceList {
     width: 320px;
-    top: 494px;
+    top: 294px;
     left: 40px;
     position: absolute;
+    height: calc(100vh - 400px) !important;
 }
 
 #MobilePanelRaceList {
@@ -127,7 +128,7 @@ body {
     width: 401px;
     position: absolute;
     top: 0%;
-    left: 0%;
+    right: 0%;
     background-color: rgba(255, 255, 255, 1);
     box-shadow: 2px 0px 10px 0px black;
     z-index: 50;
@@ -149,7 +150,7 @@ body {
 }
 
 #RaceDiv {
-    top: 400px;
+    top: 200px;
     height: 63px;
 }
 
@@ -198,7 +199,7 @@ body {
 
 #FilterDiv {
     height: 200px;
-    top: 200px;
+    top: 0px;
 }
 
 #FilterText {
@@ -246,7 +247,7 @@ body {
 }
 
 #Line2 {
-    top: 400px;
+    top: 200px;
 }
 
 .Container {
